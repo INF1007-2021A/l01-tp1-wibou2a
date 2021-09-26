@@ -35,8 +35,9 @@ def effectuerRotation(nombreComplexe, angle_rotation, trouverModule):
 
 
 def dessiner(number, label):
+    ax = plt.subplot(projection='polar')
     if number != None:
-        plt.polar([0, math.radians(trouverAngle(number))], [0, trouverModule(number)], marker='o', label=label)
+        ax.plot([0, math.radians(trouverAngle(number))], [0, trouverModule(number)], marker='o', label=label)
 
 if __name__ == '__main__':
     nombre = complex(input("Veuillez entrer un nombre complexe de votre choix sous la forme a+bj (exemple: 1+2j): "))
